@@ -229,7 +229,7 @@ var ElementNotFoundException = function ElementNotFoundException(message = "Not 
 };
 
 var getObject = function getObject(selector, root = document) {
-    const multiLevelSelectors = splitByCharacterUnlessQuoted(selector, '>');
+    const multiLevelSelectors = splitByCharacterUnlessQuoted(selector, '&');
     webElement = root;
     for (let index = 0; index < multiLevelSelectors.length-1; index++) {
         webElement = querySelectorDeep(multiLevelSelectors[index], webElement);
@@ -242,7 +242,7 @@ var getObject = function getObject(selector, root = document) {
 };
 
 var getAllObject = function getAllObject(selector, root = document) {
-    const multiLevelSelectors = splitByCharacterUnlessQuoted(selector, '>');
+    const multiLevelSelectors = splitByCharacterUnlessQuoted(selector, '&');
     webElement = root;
     for (let index = 0; index < multiLevelSelectors.length-1; index++) {
         webElement = querySelectorDeep(multiLevelSelectors[index], webElement);
